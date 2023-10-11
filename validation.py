@@ -6,7 +6,19 @@
 # - continue to ask them for a valid number until they input one
 # - once a valid number is received, return that number
 
-# NOTE: What type of error does python throw if you try to turn a non-number string into an integer?
+def validate_user_input():
+    while True:
+        try:
+            num = int(input("Please enter a number: "))
+            if type(num) != int:
+                continue
+            else:
+                break
+        except ValueError:
+            print("You did not enter a valid number, please try again")
+    return num         
+    
+# NOTE: What type of error does python throw if you try to turn a non-number string into an integer? ValueError: invalid literal for int() with base 10: 't'
 # Test it out (or google it!) to see which one. Specifically catch that exception in your code.
 
 
@@ -21,7 +33,13 @@
 # - try to print out an f-string stating the 10th item in the list (NOTE: what index is the 10th item in the list?)
 # - if there are not ten items in the list, tell the user that it is not applicable: 'N/A'
 
-# NOTE: What type of error does python throw if you try to index into a list past the number of items in it?
+def print_tenth_item(top_ten):
+    try:
+        print(top_ten[9])
+    except IndexError:
+        print("N/A")
+
+# NOTE: What type of error does python throw if you try to index into a list past the number of items in it? Index Error
 # Test it out (or google it!) to see which one. Specifically catch that exception in your code.
 
 
